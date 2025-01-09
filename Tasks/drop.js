@@ -1,11 +1,15 @@
 'use strict';
 
 const removedKeys = (dictionary, ...listedKeys) => {
+  const result = {};
   const keys = Object.keys(dictionary);
   for (const key of keys) {
-    if (listedKeys.includes(key)) delete dictionary[key];
+    const value = dictionary[key];
+    if (!listedKeys.includes(key)) {
+      result[key] = value;
+    }
   }
-  return dictionary;
+  return result;
 };
 
 module.exports = removedKeys;
