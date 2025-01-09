@@ -2,9 +2,9 @@
 
 const removedKeys = (dictionary, ...listedKeys) => {
   const keys = Object.keys(dictionary);
-  keys.forEach((x) => {
-    if (listedKeys.includes(x)) delete dictionary[x];
-  });
+  for (const key of keys) {
+    if (listedKeys.includes(key)) delete dictionary[key];
+  }
   return dictionary;
 };
 
