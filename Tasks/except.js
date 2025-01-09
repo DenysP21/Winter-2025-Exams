@@ -1,11 +1,11 @@
 'use strict';
 
-EXCEPT = (incomingvaluesarray, ...no) => {
-  intermediate_variable = Object.keys(incomingvaluesarray);
-  intermediate_variable.forEach((Z) => {
-    if (no.includes(Z)) delete incomingvaluesarray[Z];
+const removedKeys = (dictionary, ...excludedKeys) => {
+  const objectKeys = Object.keys(dictionary);
+  objectKeys.forEach((key) => {
+    if (excludedKeys.includes(key)) delete dictionary[key];
   });
-  return incomingvaluesarray;
+  return dictionary;
 };
 
-module.exports = EXCEPT;
+module.exports = removedKeys;
