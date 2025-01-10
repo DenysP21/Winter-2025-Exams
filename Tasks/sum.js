@@ -1,6 +1,6 @@
 'use strict';
 
-const sum = function (array) {
+const sum = (array) => {
   let result = 0;
   for (const element of array) {
     if (typeof element === 'number')   result += element;
